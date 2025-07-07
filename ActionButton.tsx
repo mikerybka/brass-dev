@@ -20,6 +20,10 @@ export default function ActionButton(props: {
     const [error, setError] = useState();
     const [values, setValues] = useState({});
 
+    const setValue = (k, v) => {
+        setValues(old => ({...old, [k]: v}))
+    }
+
     return <>
         <Dialog open={open} onClose={() => setOpen(false)} className="dialog-overlay">
             <div className="dialog-backdrop" aria-hidden="true" />
