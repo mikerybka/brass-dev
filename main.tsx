@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import TitleBar from './TitleBar';
 import Data from './Data';
-import './dialog.css'
+import './tailwind.css'
 
 const data = JSON.parse(document.getElementById('data')!.textContent!);
 const path = window.location.pathname;
