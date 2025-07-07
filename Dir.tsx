@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import filepathJoin from './filepathJoin';
+import CreateModal from './CreateModal';
+import id from './id';
 
 export default function Dir(props: { path: string; contents: { name: string; type: string }[] }) {
     const [contents, setContents] = useState(props.contents);
@@ -21,7 +24,7 @@ export default function Dir(props: { path: string; contents: { name: string; typ
             })}
         </ul>
         <button onClick={() => setCreating(true)}>New</button>
-        <CreateModal isOpen={creating} onClose={() => {
+        <CreateModal path={props.path} isOpen={creating} onClose={() => {
             setCreating(false);
             refresh();
         }} />

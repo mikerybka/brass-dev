@@ -1,4 +1,9 @@
-export default function CreateModal({ isOpen, onClose }) {
+import React, {useState} from 'react';
+import { Dialog } from '@headlessui/react';
+import filepathJoin from "./filepathJoin";
+import StringInput from './StringInput';
+
+export default function CreateModal({ path, isOpen, onClose }) {
     const [name, setName] = useState("")
     const [error, setError] = useState("")
 

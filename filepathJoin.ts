@@ -1,4 +1,3 @@
-
 export default function filepathJoin(...parts: string[]): string {
     return parts
         .filter(Boolean)
