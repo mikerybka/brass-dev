@@ -4,7 +4,7 @@ import popPath from './popPath';
 export default function TitleBar(props: {
     path: string;
 }) {
-    return <div className="border">
+    return <div className="border flex justify-between">
         <div className="text-xl font-bold">{props.path}</div>
         <button onClick={() => {
             fetch(props.path, {

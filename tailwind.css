@@ -562,8 +562,16 @@ video {
   position: relative;
 }
 
+.flex {
+  display: flex;
+}
+
 .contents {
   display: contents;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .border {
