@@ -1,10 +1,12 @@
 import { Dialog } from "@headlessui/react";
 import React, { useState } from "react";
 import StringInput from "./StringInput";
+import filepathJoin from "./filepathJoin";
 
 export default function ActionButton(props: {
     className: string;
-    text: string;
+    title: string;
+    description: string;
     fields: {
         id: string;
         name: string;
@@ -16,35 +18,41 @@ export default function ActionButton(props: {
 }) {
     const [open, setOpen] = useState(false);
     const [error, setError] = useState();
+    const [values, setValues] = useState({});
 
     return <>
         <Dialog open={open} onClose={() => setOpen(false)} className="dialog-overlay">
             <div className="dialog-backdrop" aria-hidden="true" />
             <div className="dialog-container">
                 <Dialog.Panel className="dialog-panel">
-                    <Dialog.Title className="dialog-title"></Dialog.Title>
+                    <Dialog.Title className="dialog-title">{props.title}</Dialog.Title>
                     <Dialog.Description className="dialog-description">
+                        {props.description}
                     </Dialog.Description>
-                    <StringInput label='Name' value={name} onChange={setName} />
+                    {props.fields.map(f => {
+                        return  <StringInput label={f.name} value={values[f.id]} onChange={v => setValue(f.id, v)} />
+                    })}
                     <div>{error}</div>
+                    <button onClick={() => setOpen(false)}>Cancel</button>
                     <button onClick={() => {
-                        const p = filepathJoin(path, name)
-                        fetch(p, {
-                            method: "PUT",
-                            body: JSON.stringify({ fields: [] }),
+                        fetch(props.path, {
+                            method: props.method,
+                            body: JSON.stringify(values),
                         }).then(res => {
-                            if (res.ok) {
-                                window.location.pathname = p
-                            } else {
-                                res.text().then(t => setError(t))
-                            }
+                            res.text().then(body => {
+                                if (res.ok) {
+                                    props.onSuccess(body)
+                                } else {
+                                   setError(body)
+                                }
+                            })
                         }).catch(err => setError(err));
-                    }}>Create</button>
+                    }}>{props.title}</button>
                 </Dialog.Panel>
             </div>
         </Dialog>
         <button className={props.className} onClick={() => setOpen(true)}>
-            {props.text}
+            {props.title}
         </button>
     </>
 }
