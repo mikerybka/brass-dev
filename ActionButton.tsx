@@ -1,7 +1,6 @@
 import { Dialog } from "@headlessui/react";
 import React, { useState } from "react";
 import StringInput from "./StringInput";
-import filepathJoin from "./filepathJoin";
 
 export default function ActionButton(props: {
     className: string;
@@ -10,7 +9,6 @@ export default function ActionButton(props: {
     fields: {
         id: string;
         name: string;
-        type: string;
     }[];
     method: string;
     path: string;
