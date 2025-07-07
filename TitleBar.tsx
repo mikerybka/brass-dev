@@ -4,7 +4,7 @@ import popPath from './popPath';
 export default function TitleBar(props: {
     path: string;
 }) {
-    return <div>
+    return <div className="border">
         <div className="text-xl font-bold">{props.path}</div>
         <button onClick={() => {
             fetch(props.path, {
