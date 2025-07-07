@@ -5,7 +5,7 @@ export default function TitleBar(props: {
     path: string;
 }) {
     return <div>
-        <div className="text-bold">{props.path}</div>
+        <div className="text-xl font-bold">{props.path}</div>
         <button onClick={() => {
             fetch(props.path, {
                 method: "DELETE",
