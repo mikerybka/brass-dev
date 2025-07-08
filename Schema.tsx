@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import List from './List';
 import ListItem from './ListItem';
 import StringInput from './StringInput';
@@ -57,9 +57,8 @@ export default function Schema(props: {
             })}
         </List>
         <div className="p-2">
-
-        <button className="w-full bg-black text-white p-4 rounded-lg" onClick={save} disabled={saving}>Save</button>
-        <div>{error}</div>
+            <button className="w-full bg-black text-white p-4 rounded-lg" onClick={save} disabled={saving}>Save</button>
+            <div>{error}</div>
         </div>
     </div>
 }
