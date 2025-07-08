@@ -562,10 +562,6 @@ video {
   position: relative;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .flex {
   display: flex;
 }
