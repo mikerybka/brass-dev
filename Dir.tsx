@@ -26,18 +26,8 @@ export default function Dir(props: { path: string; contents: { name: string; typ
                 </ListItem>
             })}
         </List>
-        <ul>
-            {contents.map(c => {
-                return <li key={c.name}>
-                    <a href={filepathJoin(props.path, id(c.name))}><div className="border p-2">
-                        {c.name}
-                    </div>
-                    </a>
-                </li>
-            })}
-        </ul>
         <ActionButton
-            className='p-4 border w-full'
+            className='p-4 border w-full bg-black text-white'
             title='New'
             description=''
             fields={[{
