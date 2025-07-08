@@ -5,7 +5,7 @@ export default function List(props: { title: string; onCreate: () => void; child
         <div className="font-bold">{props.title}</div>
         <div className="bg-white">
             {props.children}
-            <button onClick={props.onCreate}>+</button>
+            <button className="w-full p-4" onClick={props.onCreate}>+</button>
         </div>
     </div>
 }
