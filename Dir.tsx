@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import filepathJoin from './filepathJoin';
 import id from './id';
 import ActionButton from './ActionButton';
+import List from './List';
+import ListItem from './ListItem';
+import StringInput from './StringInput';
+
 
 export default function Dir(props: { path: string; contents: { name: string; type: string }[] }) {
     const [contents, setContents] = useState(props.contents);
@@ -15,6 +19,16 @@ export default function Dir(props: { path: string; contents: { name: string; typ
     }
 
     return <>
+        <List title={props.path}>
+            {contents.map((c, i) => {
+                return <ListItem key={i}>
+                     <a href={filepathJoin(props.path, id(c.name))}><div className="border p-2">
+                        {c.name}
+                    </div>
+                    </a>
+                </ListItem>
+            })}
+        </List>
         <ul>
             {contents.map(c => {
                 return <li key={c.name}>
