@@ -25,9 +25,9 @@ export default function Dir(props: { path: string; contents: { name: string; typ
                     {c.name}
                 </ListItem>
             })}
-        </List>
         <ActionButton
-            className='p-4 border w-full bg-black text-white'
+            // style={{ position: 'relative', padding: '1rem', border: '1px solid #ccc' }}
+            className='p-4 border w-full bg-white'
             title='New'
             description=''
             fields={[{
@@ -45,5 +45,6 @@ export default function Dir(props: { path: string; contents: { name: string; typ
                 }
             }}
         />
+        </List>
     </>
 }
