@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import filepathJoin from './filepathJoin';
-import CreateModal from './CreateModal';
 import id from './id';
 import ActionButton from './ActionButton';
 
@@ -46,10 +45,5 @@ export default function Dir(props: { path: string; contents: { name: string; typ
                 }
             }}
         />
-        <button className="p-4 border w-full" onClick={() => setCreating(true)}>New</button>
-        <CreateModal path={props.path} isOpen={creating} onClose={() => {
-            setCreating(false);
-            refresh();
-        }} />
     </>
 }
