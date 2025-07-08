@@ -26,7 +26,7 @@ export default function Dir(props: { path: string; contents: { name: string; typ
                 </li>
             })}
         </ul>
-        <button onClick={() => setCreating(true)}>New</button>
+        <button className="m-4 p-4 border" onClick={() => setCreating(true)}>New</button>
         <CreateModal path={props.path} isOpen={creating} onClose={() => {
             setCreating(false);
             refresh();
