@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import filepathJoin from './filepathJoin';
 import CreateModal from './CreateModal';
 import id from './id';
@@ -19,7 +19,10 @@ export default function Dir(props: { path: string; contents: { name: string; typ
         <ul>
             {contents.map(c => {
                 return <li key={c.name}>
-                    <a href={filepathJoin(props.path, id(c.name))}>{c.name}</a>
+                    <a href={filepathJoin(props.path, id(c.name))}><div className="border">
+                        {c.name}
+                    </div>
+                    </a>
                 </li>
             })}
         </ul>
