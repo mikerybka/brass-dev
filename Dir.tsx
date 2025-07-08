@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import filepathJoin from './filepathJoin';
 import CreateModal from './CreateModal';
 import id from './id';
+import ActionButton from './ActionButton';
 
 export default function Dir(props: { path: string; contents: { name: string; type: string }[] }) {
     const [contents, setContents] = useState(props.contents);
@@ -26,6 +27,25 @@ export default function Dir(props: { path: string; contents: { name: string; typ
                 </li>
             })}
         </ul>
+        <ActionButton 
+            className='p-4 border w-full'
+            title='New'
+            description=''
+            fields={[{
+                id: "id",
+                name: "ID",
+            }]}
+            method='POST'
+            path={props.path}
+            onSuccess={(res, body) => {
+                const l = res.headers.get("Location")
+                if (l) {
+                    window.location.href = l
+                } else {
+                    refresh();
+                }
+            }}
+        />
         <button className="p-4 border w-full" onClick={() => setCreating(true)}>New</button>
         <CreateModal path={props.path} isOpen={creating} onClose={() => {
             setCreating(false);

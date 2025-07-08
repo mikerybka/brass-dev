@@ -12,7 +12,7 @@ export default function ActionButton(props: {
     }[];
     method: string;
     path: string;
-    onSuccess: (body: string) => void;
+    onSuccess: (res: Response, body: string) => void;
 }) {
     const [open, setOpen] = useState(false);
     const [error, setError] = useState();
@@ -67,7 +67,7 @@ export default function ActionButton(props: {
                                     }).then(res => {
                                         res.text().then(body => {
                                             if (res.ok) {
-                                                props.onSuccess(body)
+                                                props.onSuccess(res, body)
                                             } else {
                                                 setError(body)
                                             }
