@@ -47,7 +47,7 @@ export default function Schema(props: {
             }
         })
     }
-    return <div className='bg-gray-200'>
+    return <div className=''>
         <List title="Fields" onCreate={createField}>
             {fields.map((f, i) => {
                 return <ListItem key={i} onDelete={() => deleteField(i)}>
