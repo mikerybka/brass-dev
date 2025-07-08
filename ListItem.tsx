@@ -19,7 +19,7 @@ export default function ListItem(props: {
                 }}
                 aria-label="Close"
             >
-                Del
+                X
             </button>
             {props.children}
         </div>
