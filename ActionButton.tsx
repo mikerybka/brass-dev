@@ -73,7 +73,7 @@ export default function ActionButton(props: {
                                             }
                                         })
                                     }).catch(err => setError(err));
-                                }}>{props.title}</button>
+                                }}>Submit</button>
                             </div>
                         </Dialog.Panel>
                     </Transition.Child>
