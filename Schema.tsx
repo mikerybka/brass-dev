@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import List from './List';
 import ListItem from './ListItem';
 import StringInput from './StringInput';
-import Button from './Button';
 
 export default function Schema(props: {
     path: string;
