@@ -7,7 +7,7 @@ export default function TitleBar(props: {
 }) {
     return <div className="bg-white border flex justify-between">
         <div className="text-3xl font-bold tracking-tight text-gray-900">{props.path}</div>
-        <ActionButton className='border' title='DELETE' description='Delete this object.' fields={[]} method='DELETE' path={props.path} onSuccess={(body: string)=> {
+        <ActionButton className='border' title='DELETE' description='Delete this object.' fields={[]} method='DELETE' path={props.path} onSuccess={(res, body)=> {
             window.location.pathname = popPath(props.path)
         }}/>
     </div>
