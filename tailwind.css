@@ -574,6 +574,10 @@ video {
   display: contents;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .justify-between {
   justify-content: space-between;
 }
