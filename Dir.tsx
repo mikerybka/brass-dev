@@ -19,7 +19,7 @@ export default function Dir(props: { path: string; contents: { name: string; typ
     }
 
     return <>
-        <List title={props.path}>
+        <List>
             {contents.map((c, i) => {
                 return <ListItem key={i} href={filepathJoin(props.path, id(c.name))}>
                     {c.name}
