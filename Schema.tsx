@@ -56,7 +56,10 @@ export default function Schema(props: {
                 </ListItem>
             })}
         </List>
+        <div className="p-2">
+
         <button className="w-full bg-black text-white p-4 rounded-lg" onClick={save} disabled={saving}>Save</button>
         <div>{error}</div>
+        </div>
     </div>
 }
