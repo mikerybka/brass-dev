@@ -26,7 +26,6 @@ export default function Dir(props: { path: string; contents: { name: string; typ
                 </ListItem>
             })}
         <ActionButton
-            // style={{ position: 'relative', padding: '1rem', border: '1px solid #ccc' }}
             className='p-4 border w-full bg-white'
             title='New'
             description=''
