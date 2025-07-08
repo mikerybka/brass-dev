@@ -19,7 +19,7 @@ export default function Dir(props: { path: string; contents: { name: string; typ
         <ul>
             {contents.map(c => {
                 return <li key={c.name}>
-                    <a href={filepathJoin(props.path, id(c.name))}><div className="border m-2">
+                    <a href={filepathJoin(props.path, id(c.name))}><div className="border p-2">
                         {c.name}
                     </div>
                     </a>

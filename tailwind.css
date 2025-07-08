@@ -562,10 +562,6 @@ video {
   position: relative;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .flex {
   display: flex;
 }
@@ -580,6 +576,10 @@ video {
 
 .border {
   border-width: 1px;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .text-3xl {
