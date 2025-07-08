@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 export default function List(props: { title: string; onCreate: () => void; children: React.ReactNode }) {
-    return <div className="bg-gray-200 p-2">
+    return <div className=" p-2">
         <div>{props.title}</div>
         <div className="bg-white">
             {props.children}
