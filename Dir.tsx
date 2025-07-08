@@ -5,7 +5,6 @@ import ActionButton from './ActionButton';
 
 export default function Dir(props: { path: string; contents: { name: string; type: string }[] }) {
     const [contents, setContents] = useState(props.contents);
-    const [creating, setCreating] = useState(false);
 
     const refresh = () => {
         fetch(props.path, {
