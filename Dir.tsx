@@ -22,7 +22,7 @@ export default function Dir(props: { path: string; contents: { name: string; typ
         <List title={props.path}>
             {contents.map((c, i) => {
                 return <ListItem key={i} href={filepathJoin(props.path, id(c.name))}>
-                        {c.name}
+                    {c.name}
                 </ListItem>
             })}
         </List>
@@ -36,7 +36,7 @@ export default function Dir(props: { path: string; contents: { name: string; typ
                 </li>
             })}
         </ul>
-        <ActionButton 
+        <ActionButton
             className='p-4 border w-full'
             title='New'
             description=''
