@@ -873,8 +873,8 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
