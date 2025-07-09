@@ -13,7 +13,7 @@ export default function ListItem(props: {
                     {props.onDelete ?
                         <button
                             onClick={props.onDelete}
-                            className="absolute top-2 right-2 bg-transparent border-none text-xl cursor-pointer"
+                            className="absolute top-2 right-2 bg-transparent border-none text-xl cursor-pointer sm:text-lg"
                             aria-label="Close"
                         >
                             X
@@ -29,7 +29,7 @@ export default function ListItem(props: {
             {props.onDelete ?
                 <button
                     onClick={props.onDelete}
-                    className="absolute top-2 right-2 bg-transparent border-none text-xl cursor-pointer"
+                    className="absolute top-2 right-2 bg-transparent border-none text-xl cursor-pointer sm:text-lg"
                     aria-label="Close"
                 >
                     X
