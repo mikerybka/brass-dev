@@ -9,7 +9,7 @@ export default function ListItem(props: {
     if (props.href) {
         return (
             <a href={props.href}>
-                <div key={props.key} className="relative p-4 border border-[#ccc] sm:text-4xl">
+                <div key={props.key} className="relative p-4 border border-[#ccc] text-2xl md:text-lg">
                     {props.onDelete ?
                         <button
                             onClick={props.onDelete}
@@ -25,7 +25,7 @@ export default function ListItem(props: {
         );
     }
     return (
-        <div key={props.key} className="relative p-4 border border-[#ccc] sm:text-4xl">
+        <div key={props.key} className="relative p-4 border border-[#ccc] text-2xl md:text-lg">
             {props.onDelete ?
                 <button
                     onClick={props.onDelete}
