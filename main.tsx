@@ -7,7 +7,7 @@ import './tailwind.css'
 const data = JSON.parse(document.getElementById('data')!.textContent!);
 const path = window.location.pathname;
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
+const root = ReactDOM.createRoot(document.getElementById('app')!);
 root.render(<div className='bg-gray-200 min-h-screen'>
     <TitleBar path={path} />
     <Data path={path} {...data}  />

@@ -4,25 +4,24 @@ import id from './id';
 import ActionButton from './ActionButton';
 import List from './List';
 import ListItem from './ListItem';
-import StringInput from './StringInput';
 
-
-export default function Dir(props: { path: string; contents: { name: string; type: string }[] }) {
-    const [contents, setContents] = useState(props.contents);
+export default function Folder(props: { path: string; value: { files: string[]; folders: string[] } }) {
+    console.log(props)
+    const [value, setValue] = useState(props.value);
 
     const refresh = () => {
         fetch(props.path, {
             headers: {
                 'Accept': 'application/json',
             },
-        }).then(res => res.json()).then(d => setContents(d.value));
+        }).then(res => res.json()).then(d => setValue(d.value));
     }
 
     return <>
         <List>
-            {contents.map((c, i) => {
-                return <ListItem key={i} href={filepathJoin(props.path, id(c.name))}>
-                    {c.name}
+            {value.files.map((f, i) => {
+                return <ListItem key={i} href={filepathJoin(props.path, id(f))}>
+                    {f}
                 </ListItem>
             })}
         <ActionButton
@@ -47,3 +46,14 @@ export default function Dir(props: { path: string; contents: { name: string; typ
         </List>
     </>
 }
+
+function hasSuffix(s: string, suffix: string) {
+    return s.endsWith(suffix);
+}
+
+function trimSuffix(str, suffix) {
+    if (str.endsWith(suffix)) {
+      return str.slice(0, -suffix.length);
+    }
+    return str;
+  }

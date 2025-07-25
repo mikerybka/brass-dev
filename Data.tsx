@@ -1,11 +1,14 @@
 import React from 'react';
-import Dir from './Dir';
+import Folder from './Folder';
 import Schema from './Schema';
 
 export default function Data(props: {
     path: string;
-    type: "dir";
-    value: { name: string; type: string }[];
+    type: "folder";
+    value: {
+        files: string[];
+        folders: string[];
+    };
 } | {
     path: string;
     type: "schema";
@@ -16,9 +19,10 @@ export default function Data(props: {
         }[];
     };
 }) {
+    console.log(props)
     switch (props.type) {
-        case "dir":
-            return <Dir path={props.path} contents={props.value} />
+        case "folder":
+            return <Folder path={props.path} value={props.value} />
         case "schema":
             return <Schema path={props.path} value={props.value} />
     }
